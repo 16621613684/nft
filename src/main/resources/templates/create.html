@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FORM</title>
+    <link type="text/css" rel="stylesheet" href="/css/create.css">
+</head>
+<body>
+<div class="logo"><a th:href="@{/backHome}"><img  src="images/logo.png"></a></div>
+    <h1 id="title">完成你的创作</h1>
+    <div id="window">
+        <form th:action="@{/addGood}" method="post" enctype="multipart/form-data">
+            <h1>发布作品</h1>
+            <label>
+                <input id="name" type="text" name="goodsName" placeholder="请输入商品名">
+            </label>
+            <label>
+                <input id="author" type="text" name="author" placeholder="请输入作者名">
+            </label>
+            <label>
+                <input id="price" type="text" name="price" placeholder="请输入价格">
+            </label>
+            <label>
+                <input id="file" type="file" name="file" style="cursor: pointer">
+            </label>
+            <label>
+                <input id="vary" type="text" name="type" placeholder="请输入类型">
+            </label>
+            <label>
+                <span>&nbsp;</span>
+                <button id="send" type="submit">发布</button>
+            </label>
+        </form>
+    </div>
+</body>
+</html>

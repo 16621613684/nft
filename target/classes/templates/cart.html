@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/cart.css">
+    <title>Cart</title>
+</head>
+<body>
+    <div class="logo"><a th:href="@{/backHome}"><img  src="images/logo.png"></a></div>
+    <h1 style="position: relative;left: 32%">我的购物车</h1>
+    <br>
+    <hr>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>图片</th>
+            <th>商品名</th>
+            <th>作者</th>
+            <th>单价</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+     <tbody>
+        <tr th:each="cartBean : ${session.currUser.getCart().getCartItemList()}" >
+            <td th:text="*{cartBean.goods.id}" >1</td>
+         <td> <img th:src="@{|/images/*{cartBean.goods.goodsImg}|}" alt=""></td>
+            <td th:text="*{cartBean.goods.goodsName}" >1</td>
+            <td th:text="*{cartBean.goods.author}">1</td>
+            <td th:text="*{cartBean.goods.price}">1</td>
+            <td><a th:href="@{/delete/}+*{cartBean.goods.id}"><img src="images/delete.png" style="width: 25px;height: 25px"></a></td>
+        </tr>
+     </tbody>
+    </table>
+    <div class="total">
+        <a th:href="@{/clear}" style="position: relative; left: 50px;"><p>清空购物车</p></a>
+        <a th:href="@{/goShop}" style="position: relative;  right: 50px;"><p>继续购物</p></a>
+        <div class="total-a">
+            共<div id="number" th:text="${session.currUser.getCart().getTotalCount()}">1</div>件商品
+        </div>
+        <div class="total-b">
+            总金额<div id="money" th:text="${session.currUser.getCart().getTotalMoney()}">￥18.0</div> ETH
+        </div>
+        <div class="bill"><a th:href="@{/checkout} " style="color: white">去结账</a></div>
+
+    </div>
+</body>
+</html>

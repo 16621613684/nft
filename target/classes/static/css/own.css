@@ -1,0 +1,67 @@
+
+form{
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 500px;
+    background: #fefeff;
+    padding: 20px 20px 20px 20px;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #666;
+}
+form h1{
+    font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    display: block;
+    background: #fdfdff;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin: -20px -20px 15px;
+    position: relative;
+    left: 0;
+    text-align: center;
+}
+form h1>span {
+    display: block;
+    font-size: 11px;
+}
+form label {
+    display: block;
+    margin: 0px 0px 5px;
+}
+form label>span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+form input{
+    color: #888;
+    width: 70%;
+    padding: 0px 0px 0px 5px;
+    border: 1px solid #f82e2e;
+    background: #FBFBFB;
+    outline: 0;
+    -webkit-box-shadow:inset 0px 1px 6px #ECF3F5;
+    box-shadow: inset 0px 1px 6px #ECF3F5;
+    font: 200 12px/25px Arial, Helvetica, sans-serif;
+    height: 30px;
+    line-height:15px;
+    margin: 2px 6px 16px 0px;
+}
+#send{
+    padding: 10px 30px 10px 30px;
+    background: #bb1313;
+    border: none;
+    color: #FFF;
+    box-shadow: 1px 1px 1px #4C6E91;
+    -webkit-box-shadow: 1px 1px 1px #4C6E91;
+    -moz-box-shadow: 1px 1px 1px #4C6E91;
+    text-shadow: 1px 1px 1px #5079A3;
+    margin-right: 20%;
+    cursor: pointer;
+}
+#send:hover{
+    background: #f60101;
+}

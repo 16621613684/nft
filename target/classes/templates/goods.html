@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="/css/goods.css">
+    <script  type="text/javascript" src="/css/index.js" charset="UTF-8"></script>
+
+    <title>Goods</title>
+
+</head>
+
+<body>
+<div class="head">
+    <div class="head-left">
+        <a th:href="@{/backHome}"><img  src="/images/logo.png"></a>
+    </div>
+    <div class="head-search">
+        <form action="" th:action="@{/search}" method="get">
+            <input type="text" placeholder="你想购买..." name="mohu" id="" value="">
+            <button type="submit"><img style="width: 34px;height: 34px;" src="/images/search.png"></button>
+        </form>
+    </div>
+    <div class="head-right">
+          <span class="btn-list-group">
+        <a th:href="@{/toLogin}"  class="login"><img src="/images/login.png" style="width: 40px;height: 40px"></a>
+          </span>
+        <span class="btn-list-group">
+        <a th:href="@{/toRegister}" class="register"><img src="/images/regist.png" style="width: 40px;height: 40px"></a>
+        </span>
+        <span class="btn-list-group">
+        <a th:href="@{/myCart}"  class="cart"><img src="/images/cart.png" style="width: 40px;height: 40px"></a>
+        </span>
+        <span class="btn-list-group">
+        <a href="" class="admin"><img src="/images/myself.png" style="width: 45px;height: 40px"></a>
+          <span class="btn-list-area">
+                    <a class="btn" th:href="@{/toOwn}">藏品</a>
+                    <a class="btn" th:href="@{/toOrder}">订单</a>
+                    <a class="btn" th:href="@{/toCreate}">创作</a>
+          </span>
+        </span>
+        <span class="btn-list-group">
+        <a th:href="@{/exit}" class="admin"><img src="/images/exit.png" style="width: 40px;height: 40px"></a>
+        </span>
+        <br>
+        <span ><p style="margin-left: 55% ;width: 100px;display: inline-block" th:if="${session.currUser}!=null" th:text="欢迎你+${session.currUser.getUsername()}">张dada</p></span>
+    </div>
+</div>
+    <table class="list">
+        <tr><th><a th:href="@{/orderDesc}">价格从高到低</a></th></tr>
+        <tr><th><a th:href="@{/orderAsc}">价格从低到高</a></th></tr>
+        <tr><th><a th:href="@{/order/十二生肖}">十二生肖</a></th></tr>
+        <tr><th><a th:href="@{/order/国画}">国画</a></th></tr>
+        <tr><th><a th:href="@{/order/像素头像}">像素头像</a></th></tr>
+        <tr><th><a th:href="@{/order/脸谱}">脸谱</a></th></tr>
+        <tr><th><a th:href="@{/order/漫画}">漫画</a></th></tr>
+
+    </table>
+    <div class="goods">
+        <div href="" class="goods-item" th:each="goods : ${resultGoods}" th:object="${goods}">
+            <div style="width: 200px;height: 160px;overflow: hidden" ><a ><img th:src="@{|/images/*{goodsImg}|}" alt=""></a></div>
+            <br>
+            <p th:text="|商品名:*{goodsName}|">活着</p>
+            <p th:text="|作者:*{author}|">余华</p>
+            <p th:text="|价格:*{price} ETH|">￥66.6</p>
+            <button th:onclick="|addCart(*{id})|">加入购物车</button>
+        </div>
+        </div>
+
+
+
+
+</body>
+<script type="text/javascript">
+function ajaxHttpRequestFunc(){
+    let xmlHttpRequest;///MLHttpRequest对象，即一个用于保存异步调用对象的变量
+    if(window.ActiveXObject){//IE浏览器的创建方式
+        xmlHttpRequest=new ActiveXObject("Microsoft.XMLHTTP");
+    }else if(window.XMLHttpRequest) {//Netscape/览器中的创建方式
+        xmlHttpRequest = new XMLHttpRequest();
+    }
+    xmlHttpRequest.onreadystatechange = function () {//设置响应http请求扰态变化的事件
+        console.log('请求过程', xmlHttpRequest.readyState);
+        if (xmlHttpRequest.readyState == 4) {//为断异步调用是否成功，若成功开始局部更新数据
+            console.log('状态码为', xmlHttpRequest.status);
+            if (xmlHttpRequest.status == 200) {
+                console.log('异步调用返回的数据为：', xmlHttpRequest.responseText);
+                document.getElementById("goods").innerHTML = xmlHttpRequest.responseText;
+            } else {//如果异步调用未成功，弹出警告并显示错误状态码
+                alert("error:HTTP状态码为：" + xmlHttpRequest.status);
+            }
+        }
+    }
+    xmlHttpRequest.open("GET", "D:\\apache-tomcat-9.0.59-windows-x64\\九霄\\test.txt", true);//创建http请求
+    xmlHttpRequest.send();//发送请求
+}
+
+</script>
+
+
+</html>

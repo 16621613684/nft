@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/register.css">
+    <title>Register</title>
+
+
+
+</head>
+<body>
+    <div class="main">
+        <div class="logo"><img src="images/logo.png" width="232" height="130"></div>
+        <form action="" th:action="@{/register}" method="post">
+            <div id="register_box">
+                <h2>注册</h2>
+                <div id="input_box">
+                    <label for="input_box">昵称：</label>
+                    <input type="text" name="username" placeholder=请输入昵称>
+                </div>
+                <div id="input box-a">
+                    <label for="input box-a">密码：</label>
+                    <input id="password" type="password" name="password" placeholder=请输入密码 onfocus="showTips('span-password','长度不能小于6且不能大于14')" onblur="checkPassword()" onkeyup="checkPassword()">
+                    <br>
+                    <span id="span-password"></span>
+                </div>
+                <script type="text/javascript">
+                    function checkPassword() {
+                        //获取密码输入
+                        var uPass = document.getElementById("password").value.trim();
+                        var span = document.getElementById("span-password");
+                        //对密码输入进行校验
+                        if (uPass.length == 0) {
+                            span.innerHTML = "<font color='red'size='2'>不能为空</font>";
+                            return false;
+                        } else if (uPass.length < 6 && uPass.length > 0) {
+                            span.innerHTML = "<font color='red'size='2'>密码太短</font>";
+                            return false;
+                        } else {
+                            span.innerHTML = "<font color='green'size='2'>密码可用</font>";
+                            return true;
+                        }
+                    }
+                </script>
+                <div id="input box-b">
+                    <label for="input box-b">确认密码：</label>
+                    <input id="repassword" type="password" name="repassword" placeholder=请再次输入密码 onblur="checkRePassword()" onkeyup="checkRePassword()">
+                    <br>
+                    <span id="span-repassword" style="position: relative;left: 30px"></span>
+                </div>
+                <script type="text/javascript">
+                    function checkRePassword() {
+                        //获取密码输入
+                        var uPass = document.getElementById("password").value.trim();
+                        //获取确认密码输入
+                        var uRePass = document.getElementById("repassword").value.trim();
+                        var span = document.getElementById("span-repassword");
+                        //对密码输入进行校验
+                        if (uPass != uRePass) {
+                            span.innerHTML = "<font color='red'size='2'>两次密码不一致</font>";
+                            return false;
+                        } else {
+                            span.innerHTML = "";
+                            return true;
+                        }
+                    }
+                </script>
+                <button type="submit">注册</button><br>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

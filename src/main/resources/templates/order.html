@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BILL</title>
+    <link type="text/css" rel="stylesheet" href="/css/bill.css">
+</head>
+<body>
+<div class="logo">
+    <a th:href="@{/backHome}"><img  src="images/logo.png"></a>
+</div>
+<h1>我的订单</h1>
+<br>
+<hr>
+<table id="table">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>订单日期</th>
+        <th>用户ID</th>
+        <th>总金额</th>
+        <th>商品数量</th>
+        <th>订单号</th>
+        <th>订单详情</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="Order : ${session.Orders}" >
+        <td th:text="*{Order.id}" >1</td>
+        <td th:text="*{Order.orderDate}" >1</td>
+        <td th:text="*{Order.orderUser}" >1</td>
+        <td th:text="*{Order.orderMoney}" >1</td>
+        <td th:text="*{Order.goodsCount}" >1</td>
+        <td th:text="*{Order.orderNo}" >1</td>
+        <td><a th:href="@{/detail/}+*{Order.id}"><img src="images/xiangqing.png" style="width: 25px;height: 25px"></a></td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>goods-detail</title>
+    <style>
+        .goods{
+            width:500px;
+            height: 300px;
+        }
+        .main{
+            width: 500px;
+            height: 200px;
+        }
+        #picture{
+            width: 250px;
+            height: 200px;
+            display: inline-block;
+            text-align: center;
+        }
+        img{
+            width: 80px;
+            height: 200px;
+        }
+        .second{
+            width: 250px;
+            height: 200px;
+            position: relative;
+            display: inline-block;
+            float: right;
+        }
+        #author{
+            position: relative;
+            top: 25px;
+        }
+        #time{
+            position: relative;
+            top: 65px;
+        }
+        #price{
+            position: relative;
+            top: 105px;
+        }
+        .button{
+            width: 500px;
+            height: 50px;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            margin-top: 30px;
+        }
+        button{
+            width: 150px;
+            height: 40px;
+            font-size: 20px;
+            border: 1px solid #b42323;
+            box-shadow: 0 1px 2px #e99494 inset,0 -1px 0 #954b4b inset,0 -2px 3px #e99494 inset;
+            background: -webkit-linear-gradient(top,#d53939,#b92929);
+            background: -moz-linear-gradient(top,#d53939,#b92929);
+            background: linear-gradient(top,#d53939,#b92929);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="goods">
+    <div class="main">
+        <div id="picture">
+          <!--  <img th:src="css/goods-detail.jpg">-->
+        </div>
+        <div class="second">
+            <div id="author">
+                <span>作者：</span><span>DJ</span>
+            </div>
+            <div id="time">
+                <span>发布时间：</span><span>2023.1.17</span>
+            </div>
+            <div id="price">
+                <span>售价：￥</span><span>100</span>
+            </div>
+        </div>
+    </div>
+    <div class="button"><button type="button">加入购物车</button></div>
+</div>
+</body>
+</html>
