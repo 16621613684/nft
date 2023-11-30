@@ -5,7 +5,6 @@ import com.example.nft.pojo.User;
 import com.example.nft.service.GoodsService;
 import com.example.nft.service.OrderService;
 import com.example.nft.utils.Pinyin;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
