@@ -25,11 +25,11 @@ public class WeChatController {
      * @throws Exception
      */
     @GetMapping(value = "/wxLogin")
-
+    @ResponseBody
     public void wxLoginPage(HttpServletRequest request, HttpServletResponse response,String token) throws Exception {
         System.out.println("js");
         //redirect_uri是回调的地址 注意要转成UrlEncode格式
-        String urlEncode=URLEncoder.encode("http://w78k8a.natappfree.cc/pcLogin","UTF-8");
+        String urlEncode=URLEncoder.encode("http://zn5jzq.natappfree.cc/pcLogin","UTF-8");
         String url1 ="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx70444c43c83c31b2&redirect_uri="+urlEncode+"&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
         //生成二维码的，扫描后跳转上面的地址
         QrCodeUtil.generate(url1, 300, 300, "jpg", response.getOutputStream());
