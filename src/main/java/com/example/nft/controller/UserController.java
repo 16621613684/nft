@@ -21,8 +21,7 @@ public class UserController {
     @PostMapping("/login")
     public String login(User user, HttpSession session){
 
-       // User curUser = userService.login(user);
-        User curUser = userMapper.selectUserById(3);
+        User curUser = userService.login(user);
         if (curUser!=null)
         {
           /*  Cart cart = cartItemService.getCart(user);
@@ -37,6 +36,7 @@ public class UserController {
     public String toLogin(){
         return "login";
     }
+
 
     @GetMapping("/exit")
     public String exit(HttpSession session){

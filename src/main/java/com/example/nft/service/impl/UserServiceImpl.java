@@ -17,6 +17,7 @@ public class UserServiceImpl implements UserService {
 
     public void register(User user)
     {
+    if (userMapper.login(user)==null)
          userMapper.addUser(user);
     }
 
