@@ -1,5 +1,6 @@
 package com.example.nft.controller;
 
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.example.nft.mapper.UserMapper;
 import com.example.nft.pojo.User;
 import com.example.nft.service.UserService;
@@ -46,6 +47,7 @@ public class UserController {
 
     @PostMapping("/register")
     public String register(User user){
+        if (StringUtils.isNotBlank(user.getUsername())&&StringUtils.isNotBlank(user.getPassword()))
         userService.register(user);
         return "login";
     }
