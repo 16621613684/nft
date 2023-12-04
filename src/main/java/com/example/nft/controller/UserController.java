@@ -47,7 +47,7 @@ public class UserController {
 
     @PostMapping("/register")
     public String register(User user){
-        if (StringUtils.isNotBlank(user.getUsername())&&StringUtils.isNotBlank(user.getPassword()))
+        //if (StringUtils.isNotBlank(user.getUsername())&&StringUtils.isNotBlank(user.getPassword()))
         userService.register(user);
         return "login";
     }

@@ -18,11 +18,15 @@ public class User {
     }
 
     private String username;
+    private String phone;
+    private String email;
+    private Double balance;
     private String password;
 
     private List<Goods> goodsList;
     private  Cart cart;
     private List<OrderBean> orderList;
+
 
     public User(String username, String password) {
         this.username = username;

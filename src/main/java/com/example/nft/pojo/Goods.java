@@ -17,6 +17,18 @@ public class Goods {
     @TableId(type = IdType.AUTO)
     private Integer id ;
 
+
+    private String goodsImg ;
+    private String goodsName ;
+    private Double price ;
+    private String author ;
+    private String type ;
+    private String owner;
+    @TableLogic
+    @TableField("goodsStatus")
+    private Integer goodsStatus = 0 ;
+
+
     public Goods(String goodsImg, String goodsName, Double price, String author, String type, Integer goodsStatus) {
         this.goodsImg = goodsImg;
         this.goodsName = goodsName;
@@ -25,19 +37,7 @@ public class Goods {
         this.type = type;
         this.goodsStatus = goodsStatus;
     }
-
-    private String goodsImg ;
-    private String goodsName ;
-    private Double price ;
     public Goods(Integer id) {
         this.id = id;
     }
-    private String author ;
-    private String type ;
-
-    @TableLogic
-    @TableField("goodsStatus")
-    private Integer goodsStatus = 0 ;
-
-
 }
