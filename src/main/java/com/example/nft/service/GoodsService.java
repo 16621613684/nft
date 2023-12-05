@@ -21,4 +21,6 @@ public interface GoodsService  {
 
     public void add(Goods good);
 
+    public List<Goods> getAllByOwner(Integer id);
+
 }

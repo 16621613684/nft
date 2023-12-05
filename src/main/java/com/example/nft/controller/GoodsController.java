@@ -93,7 +93,7 @@ public class GoodsController {
     @GetMapping("/toOwn")
     public String toOwn(HttpSession session,Model model){
         User currUser = (User)session.getAttribute("currUser");
-        List<Goods> ownGoods = orderService.getOwnGoods(currUser.getId());
+        List<Goods> ownGoods = goodsService.getAllByOwner(currUser.getId());
         model.addAttribute("ownGoods",ownGoods);
         return "own";
     }

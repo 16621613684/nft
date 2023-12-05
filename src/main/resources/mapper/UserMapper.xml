@@ -11,6 +11,12 @@
     -->
 
     <insert id="addUser" >
-        INSERT INTO `user` (`id`, `username`, `password`) VALUES (0,#{username},#{password});
+        INSERT INTO `user` (`id`, `username`, `password`, `balance`) VALUES (0,#{username},#{password},1000);
     </insert>
+    <update id="addBalanceById">
+        update `user` set balance=balance+#{change} where id=#{id}
+    </update>
+    <update id="minusBalanceById">
+        update `user` set balance=balance-#{change} where id=#{id}
+    </update>
 </mapper>

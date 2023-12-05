@@ -23,7 +23,7 @@ public class Goods {
     private Double price ;
     private String author ;
     private String type ;
-    private String owner;
+    private Integer owner;
     @TableLogic
     @TableField("goodsStatus")
     private Integer goodsStatus = 0 ;

@@ -1,5 +1,4 @@
 package com.example.nft.mapper;
-import org.apache.ibatis.annotations.Param;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.nft.pojo.Goods;
@@ -36,5 +35,7 @@ public interface GoodsMapper extends BaseMapper<Goods>{
     @Select("SELECT SUM(price) FROM goods WHERE `type`=#{type} AND goodsStatus =0")
     Integer getTotal(String type);
 
+    void setOwnerById(Integer ownerId,Integer goodsId);
 
+    List<Goods> getAllByOwner(Integer id);
 }

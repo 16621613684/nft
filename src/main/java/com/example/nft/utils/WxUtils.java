@@ -58,7 +58,6 @@ public class WxUtils {
             strResult1 = EntityUtils.toString(response1
                     .getEntity(),"UTF-8");
         }
-        //处理数据，存到实体类中  后把用户个人信息存到数据库，由于我是测试在这里我就不存了
         WeChatPerson weChatPerson = JSON.parseObject(strResult1, WeChatPerson.class);
         System.out.println(weChatPerson);
 
