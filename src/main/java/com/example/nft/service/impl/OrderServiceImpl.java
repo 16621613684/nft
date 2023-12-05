@@ -19,10 +19,17 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void checkout(OrderBean orderBean,Integer userId) {
         orderMapper.insert(orderBean);
+        //把购物车的项加入订单项
         orderMapper.addOrderItem(userId);
+        //变更商品状态
         orderMapper.setGoodsStatusById(userId);
+        //订单项绑定订单号
         orderMapper.bindOrder(orderBean.getId());
+        //加入已拥有的藏品
         orderMapper.addToOwn(userId);
+        //扣除余额
+        //新增余额变更记录
+        //清空购物车
         cartService.clearCart(userId);
     }
 

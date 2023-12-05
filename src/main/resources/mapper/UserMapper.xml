@@ -11,6 +11,6 @@
     -->
 
     <insert id="addUser" >
-            insert into user values(0,#{username},#{password})
+        INSERT INTO `user` (`id`, `username`, `password`) VALUES (0,#{username},#{password});
     </insert>
 </mapper>
