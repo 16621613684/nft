@@ -1,4 +1,5 @@
 package com.example.nft.mapper;
+import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 import com.example.nft.pojo.Goods;
@@ -27,5 +28,7 @@ public interface OrderMapper extends BaseMapper<OrderBean> {
 
     @Update("UPDATE goods SET goodsStatus =1 WHERE id IN (SELECT goodsId FROM cart_item WHERE userId=#{id})")
     void setGoodsStatusById(Integer id);
+
+    String getOrderNoById(@Param("id") Integer id);
 
 }

@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -94,6 +95,7 @@ public class GoodsController {
     public String toOwn(HttpSession session,Model model){
         User currUser = (User)session.getAttribute("currUser");
         List<Goods> ownGoods = goodsService.getAllByOwner(currUser.getId());
+        if (ownGoods.size()==0)model.addAttribute("ownGoods",new ArrayList<>());
         model.addAttribute("ownGoods",ownGoods);
         return "own";
     }

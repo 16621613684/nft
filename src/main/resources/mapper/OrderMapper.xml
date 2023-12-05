@@ -15,4 +15,10 @@
         where
         orderUser = #{orderUser,jdbcType=NUMERIC}
     </select>
+    <select id="getOrderNoById" resultType="String">
+        select orderNo
+        from orderbean
+        where
+           id = #{id}
+    </select>
 </mapper>

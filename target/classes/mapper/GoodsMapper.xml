@@ -24,6 +24,9 @@
     <select id="getAllByOwner" resultType="com.example.nft.pojo.Goods">
         select * from goods where owner=#{id}
     </select>
+    <select id="getGoodsImgById" resultType="java.lang.String">
+        select goodsImg from goods where id=#{id}
+    </select>
     <update id="setGoodsStatus">
         update goods set goodsStatus=0
     </update>

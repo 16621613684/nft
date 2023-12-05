@@ -1,4 +1,6 @@
 package com.example.nft.mapper;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -22,4 +24,7 @@ public interface UserMapper extends BaseMapper<User> {
 
     void addBalanceById(Double change,Integer id);
     void minusBalanceById(Double change,Integer id);
+
+    String getUsernameById(@Param("id") Integer id);
+
 }

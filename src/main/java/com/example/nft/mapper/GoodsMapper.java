@@ -38,4 +38,6 @@ public interface GoodsMapper extends BaseMapper<Goods>{
     void setOwnerById(Integer ownerId,Integer goodsId);
 
     List<Goods> getAllByOwner(Integer id);
+
+    String getGoodsImgById(Integer id);
 }

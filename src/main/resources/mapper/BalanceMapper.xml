@@ -14,4 +14,12 @@
         VALUES (#{buyerId},#{sellerId},#{goodsId},#{orderId},#{change},#{time})
 
     </insert>
+    <select id="selectAllByUserId" resultType="com.example.nft.pojo.BalanceHistory">
+        select *
+        from balance_history
+        where
+            buyerId = #{buyerId} or sellerId=#{sellerId}
+    </select>
+
+
 </mapper>

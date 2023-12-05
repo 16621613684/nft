@@ -19,4 +19,9 @@
     <update id="minusBalanceById">
         update `user` set balance=balance-#{change} where id=#{id}
     </update>
+    <select id="getUsernameById" resultType="String">
+        select username
+        from user
+        where id = #{id}
+    </select>
 </mapper>
