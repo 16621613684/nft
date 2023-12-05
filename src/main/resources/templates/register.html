@@ -57,7 +57,7 @@
 					<span id="phone" style="border-bottom: 1px solid black;" onclick="changeType('phone')"
                           onmouseover="onMouseOver()"><img src="images/phone.png"/></span>
             <span id="e_mail" onclick="changeType('e_mail')" onmouseover="onMouseOver()"><img src="images/e-mail.png"/></span>
-            <span id="wx" onclick="changeType('wx')" onmouseover="onMouseOver()"><img src="images/wechat.png"/></span>
+            <span id="wx"  onmouseover="onMouseOver()"><img th:href="@{/wxLogin}" src="images/wechat.png"/></span>
         </div>
         <form action="" th:action="@{/register}" method="post" id="register_phone">
             <div>
@@ -140,7 +140,7 @@
             <div>
                 <div id="input_box-e">
                     <label for="input_box">邮箱：</label>
-                    <input type="text" name="username" placeholder=请输入邮箱>
+                    <input type="text" name="email" placeholder=请输入邮箱>
                 </div>
                 <div class="input-box-a">
                     <label for="input box-a">密码：</label>

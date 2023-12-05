@@ -11,6 +11,7 @@ public class BalanceVO {
     private String buyerName;
     private String sellerName;
     private Integer goodsId ;
+    private String goodsName ;
     private String goodsImg ;
     private Integer orderId ;
     private String orderNo ;

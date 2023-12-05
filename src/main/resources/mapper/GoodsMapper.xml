@@ -33,4 +33,9 @@
     <update id="setOwnerById">
         update goods set owner=#{ownerId} where id=#{goodsId}
     </update>
+    <select id="getGoodsNameById" resultType="String">
+        select goodsName
+        from goods
+        where id = #{id}
+    </select>
 </mapper>

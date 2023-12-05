@@ -40,9 +40,10 @@ public class BalanceController {
         for (BalanceHistory bh : balanceHistories) {
             String buyerName=userMapper.getUsernameById(bh.getBuyerId());
             String sellerName=userMapper.getUsernameById(bh.getSellerId());
+            String goodsName= goodsMapper.getGoodsNameById(bh.getGoodsId());
             String goodsImg = goodsMapper.getGoodsImgById(bh.getGoodsId());
             String orderNo=orderMapper.getOrderNoById(bh.getOrderId());
-            balanceVO.add(new BalanceVO(bh.getBuyerId(),bh.getSellerId(),buyerName,sellerName,bh.getGoodsId(),goodsImg,bh.getOrderId(),orderNo,bh.getChange(),bh.getTime()));
+            balanceVO.add(new BalanceVO(bh.getBuyerId(),bh.getSellerId(),buyerName,sellerName,bh.getGoodsId(),goodsName,goodsImg,bh.getOrderId(),orderNo,bh.getChange(),bh.getTime()));
         }
         List<BalanceVO> buyHistory = balanceVO.stream().filter(b -> b.getBuyerId() == currUser.getId()).collect(Collectors.toList());
         List<BalanceVO> sellHistory = balanceVO.stream().filter(b -> b.getSellerId() == currUser.getId()).collect(Collectors.toList());
