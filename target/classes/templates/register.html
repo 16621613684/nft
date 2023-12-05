@@ -4,23 +4,72 @@
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet" href="css/register.css">
     <title>Register</title>
+    <script type="text/javascript">
+        function changeType(type) {
+            var div_phone = document.getElementById("register_phone");
+            var div_mail = document.getElementById("register_mail");
+            var div_wx = document.getElementById("register_wx");
+            var phone = document.getElementById("phone");
+            var mail = document.getElementById("e_mail");
+            var wx = document.getElementById("wx");
+            if (type == 'phone') {
+                event.stopPropagation();
+                div_phone.style.display = 'flex';
+                div_mail.style.display = 'none';
+                div_wx.style.display = 'none';
+                phone.style.borderBottom = '1px solid black';
+                mail.style.borderBottom = '';
+                wx.style.borderBottom = '';
+            } else if (type == 'e_mail') {
+                event.stopPropagation();
+                div_phone.style.display = 'none';
+                div_mail.style.display = 'flex';
+                div_wx.style.display = 'none';
+                phone.style.borderBottom = '';
+                mail.style.borderBottom = '1px solid black';
+                wx.style.borderBottom = '';
+            } else {
+                event.stopPropagation();
+                div_phone.style.display = 'none';
+                div_mail.style.display = 'none';
+                div_wx.style.display = 'block';
+                phone.style.borderBottom = '';
+                mail.style.borderBottom = '';
+                wx.style.borderBottom = '1px solid black';
+            }
+        }
 
-
-
+        function onMouseOver() {
+            phone.style.cursor = 'pointer';
+            e_mail.style.cursor = 'pointer';
+            wx.style.cursor = 'pointer';
+            span_code.style.cursor = 'pointer';
+            span_code_e.style.cursor = 'pointer';
+        }
+    </script>
 </head>
 <body>
-    <div class="main">
-        <div class="logo"><img src="images/logo.png" width="232" height="130"></div>
-        <form action="" th:action="@{/register}" method="post">
-            <div id="register_box">
-                <h2>注册</h2>
-                <div id="input_box">
-                    <label for="input_box">昵称：</label>
-                    <input type="text" name="username" placeholder=请输入昵称>
+<div class="main">
+    <div class="logo"><img src="images/logo.png" width="232" height="130"></div>
+    <div id="register_box">
+        <h2>注册</h2>
+        <div id="type">
+					<span id="phone" style="border-bottom: 1px solid black;" onclick="changeType('phone')"
+                          onmouseover="onMouseOver()"><img src="images/phone.png"/></span>
+            <span id="e_mail" onclick="changeType('e_mail')" onmouseover="onMouseOver()"><img src="images/e-mail.png"/></span>
+            <span id="wx" onclick="changeType('wx')" onmouseover="onMouseOver()"><img src="images/wechat.png"/></span>
+        </div>
+        <form action="" th:action="@{/register}" method="post" id="register_phone">
+            <div>
+                <div class="input_box">
+                    <label for="input_box">手机号：</label>
+                    <input type="text" name="phone" placeholder=请输入手机号>
                 </div>
-                <div id="input box-a">
+                <div class="input-box-a">
                     <label for="input box-a">密码：</label>
-                    <input id="password" type="password" name="password" placeholder=请输入密码 onfocus="showTips('span-password','长度不能小于6且不能大于14')" onblur="checkPassword()" onkeyup="checkPassword()">
+                    <input id="password" type="password" name="password" placeholder=请输入密码
+                           onfocus="showTips('span-password','长度不能小于6且不能大于14')" onblur="checkPassword()"
+                           onkeyup="checkPassword()">
                     <br>
                     <span id="span-password"></span>
                 </div>
@@ -42,9 +91,10 @@
                         }
                     }
                 </script>
-                <div id="input box-b">
+                <div class="input-box-b">
                     <label for="input box-b">确认密码：</label>
-                    <input id="repassword" type="password" name="repassword" placeholder=请再次输入密码 onblur="checkRePassword()" onkeyup="checkRePassword()">
+                    <input id="repassword" type="password" name="repassword" placeholder=请再次输入密码
+                           onblur="checkRePassword()" onkeyup="checkRePassword()">
                     <br>
                     <span id="span-repassword" style="position: relative;left: 30px"></span>
                 </div>
@@ -65,9 +115,107 @@
                         }
                     }
                 </script>
-                <button type="submit">注册</button><br>
+                <div class="input-box-c">
+                    <label for="input box-a">验证码：</label>
+                    <input id="code" type="text" name="code" placeholder=请输入验证码>
+                    <div id="span_code" onclick="getCode()" onmousemove="onMouseOver()"><img
+                            src="images/code.png" /></div>
+                    <script>
+                        function getCode() {
+                            var charactors = "1234567890";
+                            var value = '',
+                                i;
+                            for (j = 1; j <= 4; j++) {
+                                i = parseInt(10 * Math.random());
+                                value = value + charactors.charAt(i);
+                            }
+                            document.getElementById('code').value = value;
+                        }
+                    </script>
+                </div>
             </div>
+            <button class="post" type="submit">注册</button><br>
         </form>
+        <form action="" th:action="@{/register}" method="post" id="register_mail">
+            <div>
+                <div id="input_box-e">
+                    <label for="input_box">邮箱：</label>
+                    <input type="text" name="username" placeholder=请输入邮箱>
+                </div>
+                <div class="input-box-a">
+                    <label for="input box-a">密码：</label>
+                    <input id="password-e" type="password" name="password" placeholder=请输入密码
+                           onfocus="showTips('span-password-e','长度不能小于6且不能大于14')" onblur="checkPasswordE()"
+                           onkeyup="checkPasswordE()">
+                    <br>
+                    <span id="span-password-e"></span>
+                </div>
+                <script type="text/javascript">
+                    function checkPasswordE() {
+                        //获取密码输入
+                        var uPass = document.getElementById("password-e").value.trim();
+                        var span = document.getElementById("span-password-e");
+                        //对密码输入进行校验
+                        if (uPass.length == 0) {
+                            span.innerHTML = "<font color='red'size='2'>不能为空</font>";
+                            return false;
+                        } else if (uPass.length < 6 && uPass.length > 0) {
+                            span.innerHTML = "<font color='red'size='2'>密码太短</font>";
+                            return false;
+                        } else {
+                            span.innerHTML = "<font color='green'size='2'>密码可用</font>";
+                            return true;
+                        }
+                    }
+                </script>
+                <div class="input-box-b">
+                    <label for="input box-b">确认密码：</label>
+                    <input id="repassword-e" type="password" name="repassword" placeholder=请再次输入密码
+                           onblur="checkRePasswordE()" onkeyup="checkRePasswordE()">
+                    <br>
+                    <span id="span-repassword-e" style="position: relative;left: 30px"></span>
+                </div>
+                <script type="text/javascript">
+                    function checkRePasswordE() {
+                        //获取密码输入
+                        var uPass = document.getElementById("password-e").value.trim();
+                        //获取确认密码输入
+                        var uRePass = document.getElementById("repassword-e").value.trim();
+                        var span = document.getElementById("span-repassword-e");
+                        //对密码输入进行校验
+                        if (uPass != uRePass) {
+                            span.innerHTML = "<font color='red'size='2'>两次密码不一致</font>";
+                            return false;
+                        } else {
+                            span.innerHTML = "";
+                            return true;
+                        }
+                    }
+                </script>
+                <div class="input-box-c">
+                    <label for="input box-a">验证码：</label>
+                    <input id="code-e" type="text" name="code" placeholder=请输入验证码>
+                    <div id="span_code_e" onclick="getCodeE()" onmousemove="onMouseOver()"><img
+                            src="images/code.png" /></div>
+                    <script>
+                        function getCodeE() {
+                            var charactors = "1234567890";
+                            var value = '',
+                                i;
+                            for (j = 1; j <= 4; j++) {
+                                i = parseInt(10 * Math.random());
+                                value = value + charactors.charAt(i);
+                            }
+                            document.getElementById('code-e').value = value;
+                        }
+                    </script>
+                </div>
+            </div>
+            <button class="post" type="submit">注册</button><br>
+        </form>
+        <div id="register_wx">
+        </div>
     </div>
+</div>
 </body>
 </html>
