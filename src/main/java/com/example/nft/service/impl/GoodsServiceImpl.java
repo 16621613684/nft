@@ -73,5 +73,10 @@ public class GoodsServiceImpl  implements GoodsService {
         goodsMapper.insert(good);
     }
 
+    @Override
+    public List<Goods> getAllByOwner(Integer id) {
+        return goodsMapper.getAllByOwner(id);
+    }
+
 
 }

@@ -6,6 +6,7 @@ import com.example.nft.pojo.User;
 import com.example.nft.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -20,7 +21,7 @@ public class UserController {
     UserMapper userMapper;
 
     @PostMapping("/login")
-    public String login(User user, HttpSession session){
+    public String login(User user, HttpSession session, Model model){
 
         User curUser = userService.login(user);
         if (curUser!=null)
@@ -30,7 +31,7 @@ public class UserController {
             session.setAttribute("currUser",curUser);
             return "redirect:/home";
         }
-
+        model.addAttribute("msg","账号或密码错误");
         return "login";
     }
     @GetMapping("/toLogin")

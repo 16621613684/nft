@@ -8,15 +8,18 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
-    @Select("select * from user where (username = #{username} or phone=#{phone} or email=#{email})and password = #{password}")
+    @Select("select * from user where (username = #{username} or phone=#{username} or email=#{username})and password = #{password}")
     public User login(User user);
 
     public void addUser(User user);
     @Select("select * from user where id=#{id}")
     User selectUserById(Integer id);
 
-    @Insert("INSERT INTO `user` (`id`, `username`, `phone`,`password`) VALUES (0,#{username},#{phone},#{password});")
+    @Insert("INSERT INTO `user` (`id`, `username`, `phone`,`password`, `balance`) VALUES (0,#{username},#{phone},#{password},1000);")
     void addUserByPhone(User user);
-    @Insert("INSERT INTO `user` (`id`, `username`, `email`,`password`) VALUES (0,#{username},#{email},#{password});")
+    @Insert("INSERT INTO `user` (`id`, `username`, `email`,`password`, `balance`) VALUES (0,#{username},#{email},#{password},1000);")
     void addUserByEmail(User user);
+
+    void addBalanceById(Double change,Integer id);
+    void minusBalanceById(Double change,Integer id);
 }

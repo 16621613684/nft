@@ -21,7 +21,13 @@
     <select id="searchGoodsByType" resultType="com.example.nft.pojo.Goods">
         select *from goods where type like "%"#{mohu}"%" and goodsStatus =0
     </select>
+    <select id="getAllByOwner" resultType="com.example.nft.pojo.Goods">
+        select * from goods where owner=#{id}
+    </select>
     <update id="setGoodsStatus">
         update goods set goodsStatus=0
+    </update>
+    <update id="setOwnerById">
+        update goods set owner=#{ownerId} where id=#{goodsId}
     </update>
 </mapper>

@@ -11,5 +11,4 @@ public interface OrderService {
     List<Goods> getGoods(Integer id);
     OrderBean getOrderById(Integer id);
     void deleteFromOwn(Integer goodsId,Integer userId);
-    List<Goods> getOwnGoods (Integer userId);
 }

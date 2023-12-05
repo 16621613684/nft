@@ -24,8 +24,6 @@ public interface OrderMapper extends BaseMapper<OrderBean> {
     @Delete("delete from own where goodsId=#{goodsId} and userId=#{userId}")
     void deleteFromOwn(Integer goodsId,Integer userId);
 
-    @Select("SELECT *FROM goods WHERE id IN (SELECT goodsId FROM own WHERE userId=#{userId})")
-    List<Goods> getOwnGoods (Integer userId);
 
     @Update("UPDATE goods SET goodsStatus =1 WHERE id IN (SELECT goodsId FROM cart_item WHERE userId=#{id})")
     void setGoodsStatusById(Integer id);

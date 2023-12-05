@@ -17,3 +17,6 @@ CREATE TABLE `balance_history` (
 
 ALTER TABLE `goods`
 ADD COLUMN `owner` INT(11)
+
+
+UPDATE goods SET OWNER=2 WHERE id IS NOT NULL`goods`
