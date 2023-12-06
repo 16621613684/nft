@@ -50,14 +50,14 @@
 </head>
 <body>
 <div class="main">
-    <div class="logo"><img src="images/logo.png" width="232" height="130"></div>
+    <div class="logo"> <a th:href="@{/toLogin}"><img src="/images/logo.png"></a></div>
     <div id="register_box">
         <h2>注册</h2>
         <div id="type">
 					<span id="phone" style="border-bottom: 1px solid black;" onclick="changeType('phone')"
                           onmouseover="onMouseOver()"><img src="images/phone.png"/></span>
             <span id="e_mail" onclick="changeType('e_mail')" onmouseover="onMouseOver()"><img src="images/e-mail.png"/></span>
-            <span id="wx"  onmouseover="onMouseOver()"><img th:href="@{/wxLogin}" src="images/wechat.png"/></span>
+            <span id="wx"  onmouseover="onMouseOver()"><a th:href="@{/wxLogin}"><img  src="images/wechat.png"/></a></span>
         </div>
         <form action="" th:action="@{/register}" method="post" id="register_phone">
             <div>

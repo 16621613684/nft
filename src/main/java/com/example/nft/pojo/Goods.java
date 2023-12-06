@@ -17,7 +17,7 @@ public class Goods {
     @TableId(type = IdType.AUTO)
     private Integer id ;
 
-
+    private String audio;
     private String goodsImg ;
     private String goodsName ;
     private Double price ;

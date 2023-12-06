@@ -18,7 +18,7 @@
         select *
         from balance_history
         where
-            buyerId = #{buyerId} or sellerId=#{sellerId}
+            buyerId = #{userId} or sellerId=#{userId}
     </select>
 
 

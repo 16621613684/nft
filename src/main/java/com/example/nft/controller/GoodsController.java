@@ -15,8 +15,10 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Controller
 public class GoodsController {
@@ -32,21 +34,25 @@ public class GoodsController {
     //降序
     @GetMapping("/orderDesc")
     public String searchDesc(Model model){
-        List<Goods> allByPrice = goodsService.getAllByPrice(0);
-        model.addAttribute("resultGoods",allByPrice);
+        List<Goods> allByPrice = goodsService.getAllGoods().stream()
+                .sorted((o1, o2) -> o2.getPrice().intValue()-o1.getPrice().intValue())
+                .collect(Collectors.toList());
+        model.addAttribute("resultGoods",handleSrc(allByPrice));
         return "goods";
     }//升序
     @GetMapping("/orderAsc")
     public String searchAsc(Model model){
-        List<Goods> allByPrice = goodsService.getAllByPrice(1);
-        model.addAttribute("resultGoods",allByPrice);
+        List<Goods> allByPrice = goodsService.getAllGoods().stream()
+                .sorted((o1, o2) -> o1.getPrice().intValue()-o2.getPrice().intValue())
+                .collect(Collectors.toList());
+        model.addAttribute("resultGoods",handleSrc(allByPrice));
         return "goods";
     }
    //搜索
     @GetMapping(value = "/search")
     public String search(Model model,@RequestParam(value = "mohu",defaultValue = "") String mohu){
         Set<Goods> goods = goodsService.searchGoods(mohu);
-        model.addAttribute("resultGoods",goods);
+        model.addAttribute("resultGoods",handleSrc(goods));
         return "goods";
     }
     //按类别筛选
@@ -54,7 +60,7 @@ public class GoodsController {
     public String searchType(@PathVariable String type, Model model){
 
         Set<Goods> goods = goodsService.searchGoodsByType(type);
-        model.addAttribute("resultGoods",goods);
+        model.addAttribute("resultGoods",handleSrc(goods));
         return "goods";
     }
     //访客登陆
@@ -96,7 +102,7 @@ public class GoodsController {
         User currUser = (User)session.getAttribute("currUser");
         List<Goods> ownGoods = goodsService.getAllByOwner(currUser.getId());
         if (ownGoods.size()==0)model.addAttribute("ownGoods",new ArrayList<>());
-        model.addAttribute("ownGoods",ownGoods);
+        model.addAttribute("ownGoods",handleSrc(ownGoods));
         return "own";
     }
     //去创作
@@ -119,4 +125,14 @@ public class GoodsController {
         goodsService.add(good);
         return "home";
     }
+
+    public Collection<Goods> handleSrc(Collection<Goods> source){
+        for (Goods good : source) {
+            if (good.getGoodsImg().contains(".mp3")){
+                good.setAudio(good.getGoodsImg());
+                good.setGoodsImg(null);
+            }
+        }return source;
+    }
+
 }

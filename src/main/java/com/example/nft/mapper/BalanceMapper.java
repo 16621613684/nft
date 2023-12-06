@@ -12,7 +12,7 @@ public interface BalanceMapper extends BaseMapper<BalanceHistory> {
 
     int insert(BalanceHistory balanceHistory);
 
-    List<BalanceHistory> selectAllByUserId(@Param("buyerId") Integer userId);
+    List<BalanceHistory> selectAllByUserId(@Param("userId") Integer userId);
 
 
 }

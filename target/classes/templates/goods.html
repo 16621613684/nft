@@ -57,7 +57,7 @@
     </table>
     <div class="goods">
         <div href="" class="goods-item" th:each="goods : ${resultGoods}" th:object="${goods}">
-            <div style="width: 200px;height: 160px;overflow: hidden" ><a ><img th:src="@{|/images/*{goodsImg}|}" alt=""></a></div>
+            <div style="width: 200px;height: 160px;overflow: hidden" ><a ><img th:if="*{goodsImg}!=null" th:src="@{|/images/*{goodsImg}|}" alt=""> <audio th:if="*{audio}!=null" th:src="@{|/audio/*{audio}|}" controls="controls"></audio></a></div>
             <br>
             <p th:text="|商品名:*{goodsName}|">活着</p>
             <p th:text="|作者:*{author}|">余华</p>
