@@ -29,12 +29,12 @@ public class BalanceController {
     @Autowired
     OrderMapper orderMapper;
 
-    @GetMapping("/balanceDetail")
+    @GetMapping("/toWallet")
     public String balanceDetail(HttpSession session, Model model){
         User currUser = (User)session.getAttribute("currUser");
         List<BalanceHistory> balanceHistories = balanceMapper.selectAllByUserId(currUser.getId());
         if (balanceHistories.isEmpty())
-            return "balanceDetail";
+            return "wallet";
         ArrayList<BalanceVO> balanceVO = new ArrayList<>();
         //遍历数据库中 交易记录，转化为BalanceVO
         for (BalanceHistory bh : balanceHistories) {
@@ -51,6 +51,6 @@ public class BalanceController {
         model.addAttribute("buyHistory",buyHistory);
         model.addAttribute("sellHistory",sellHistory);
 
-        return "balanceDetail";
+        return "wallet";
     }
 }

@@ -55,7 +55,7 @@ public class GoodsServiceImpl  implements GoodsService {
     @Override
     public void resell(Integer goodsId, Double price,Integer userId) {
         goodsMapper.resetGoodsById(goodsId,price);
-        orderService.deleteFromOwn(goodsId,userId);
+        //orderService.deleteFromOwn(goodsId,userId);
 
     }
 

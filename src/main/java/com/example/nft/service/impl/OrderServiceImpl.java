@@ -51,7 +51,7 @@ public class OrderServiceImpl implements OrderService {
         //订单项绑定订单号
         orderMapper.bindOrder(orderBean.getId());
         //加入已拥有的藏品
-        orderMapper.addToOwn(userId);
+        //orderMapper.addToOwn(userId);
         //清空购物车
         cartService.clearCart(userId);
     }
