@@ -77,6 +77,7 @@ tbody tr:hover td {
 button {
 	background-color: transparent;
 	border-style: none;
+
 }
 #buy_box{
 	display: block;
@@ -92,4 +93,10 @@ button {
 	border-radius: 5%;
 	margin-top: 1%;
 	color:white;
+}
+#buy{
+	font-size: 15px;
+}
+#sale{
+	font-size: 15px;
 }

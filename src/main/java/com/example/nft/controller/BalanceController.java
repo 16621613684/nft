@@ -50,7 +50,7 @@ public class BalanceController {
 
         model.addAttribute("buyHistory",buyHistory);
         model.addAttribute("sellHistory",sellHistory);
-
+        model.addAttribute("balance",currUser.getBalance());
         return "wallet";
     }
 }
