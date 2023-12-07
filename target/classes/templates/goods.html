@@ -36,6 +36,8 @@
                     <a class="btn" th:href="@{/toOwn}">藏品</a>
                     <a class="btn" th:href="@{/toOrder}">订单</a>
                     <a class="btn" th:href="@{/toCreate}">创作</a>
+                    <a class="btn" th:href="@{/toWallet}">钱包</a>
+
           </span>
         </span>
         <span class="btn-list-group">
@@ -57,7 +59,9 @@
     </table>
     <div class="goods">
         <div href="" class="goods-item" th:each="goods : ${resultGoods}" th:object="${goods}">
-            <div style="width: 200px;height: 160px;overflow: hidden" ><a ><img th:if="*{goodsImg}!=null" th:src="@{|/images/*{goodsImg}|}" alt=""> <audio th:if="*{audio}!=null" th:src="@{|/audio/*{audio}|}" controls="controls"></audio></a></div>
+            <div style="width: 200px;height: 160px;overflow: hidden" ><a ><img th:if="*{goodsImg}!=null" th:src="@{|/images/*{goodsImg}|}" alt="">
+                <audio th:if="*{audio}!=null" th:src="@{|/audio/*{audio}|}" controls="controls" controlsList="nodownload"></audio>
+            </a></div>
             <br>
             <p th:text="|商品名:*{goodsName}|">活着</p>
             <p th:text="|作者:*{author}|">余华</p>

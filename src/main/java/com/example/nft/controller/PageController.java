@@ -29,4 +29,9 @@ public class PageController {
         return wxSignatureCheckService.wxSignatureCheck(signature, timestamp, nonce, echostr);
     }
 
+    @GetMapping("/certify")
+    public String certify(){
+        return "certify";
+    }
+
 }
