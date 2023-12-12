@@ -1,9 +1,6 @@
 package com.example.nft;
 
-import com.example.nft.mapper.CartMapper;
-import com.example.nft.mapper.GoodsMapper;
-import com.example.nft.mapper.OrderMapper;
-import com.example.nft.mapper.UserMapper;
+import com.example.nft.mapper.*;
 import com.example.nft.pojo.*;
 import com.example.nft.service.CartService;
 import com.example.nft.service.GoodsService;
@@ -13,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -30,14 +28,15 @@ class NftApplicationTests {
     OrderMapper orderMapper;
     @Autowired
     UserMapper userMapper;
+
+    @Autowired
+    AuctionMapper auctionMapper;
     @Test
     void contextLoads() {
     }
 
     @Test
     void user(){
-        String a = Pinyin.toPinyin("张三");
-        System.out.println(a);
     }
 
     @Test

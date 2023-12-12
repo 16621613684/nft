@@ -1,23 +1,9 @@
-ALTER TABLE `user`
-ADD COLUMN `phone` VARCHAR(20),
-ADD COLUMN `email` VARCHAR(50),
-ADD COLUMN `balance` DOUBLE;
-
-
-CREATE TABLE `balance_history` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `buyerId` int(11) NOT NULL,
-  `sellerId` int(11) DEFAULT NULL,
-  `goodsId` int(11) DEFAULT NULL,
-  `orderId` int(11) NOT NULL,
-  `change` double NOT NULL,
-  `time` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8
-
-
-ALTER TABLE `goods`
-ADD COLUMN `owner` INT(11)
-
-
-UPDATE goods SET OWNER=2 WHERE id IS NOT NULL`goods`
+CREATE TABLE auction (
+                         id INT AUTO_INCREMENT PRIMARY KEY,
+                         goodId INT,
+                         endTime DATETIME,
+                         startingPrice DOUBLE,
+                         currentPrice DOUBLE,
+                         highestBidderId INT,
+                         status INT
+);

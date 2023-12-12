@@ -34,4 +34,9 @@ public class PageController {
         return "certify";
     }
 
+    @GetMapping("/test")
+    public String test(){
+        return "test";
+    }
+
 }
