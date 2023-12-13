@@ -50,7 +50,8 @@ public class BalanceController {
 
         model.addAttribute("buyHistory",buyHistory);
         model.addAttribute("sellHistory",sellHistory);
-        model.addAttribute("balance",currUser.getBalance());
+        //获取最新的余额值
+        model.addAttribute("balance",userMapper.selectUserById(currUser.getId()).getBalance());
         return "wallet";
     }
 }

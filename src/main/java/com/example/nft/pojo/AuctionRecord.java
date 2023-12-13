@@ -8,32 +8,28 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
- * @TableName auction
+ * @TableName auction_record
  */
-@TableName(value ="auction")
+@TableName(value ="auction_record")
 @Data
 @AllArgsConstructor
-public class Auction implements Serializable {
+public class AuctionRecord implements Serializable {
     @TableId(type = IdType.AUTO)
     private Integer id;
 
-    private Integer goodId;
+    private Integer userId;
+
+    private Integer auctionId;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") //接收时间类型
-    private LocalDateTime endTime;
+    private LocalDateTime biddingTime;
 
-    private Double startingPrice;
-
-    private Double currentPrice;
-
-    private Integer highestBidderId;
-
-    private Integer status;
+    private Double price;
 
     private static final long serialVersionUID = 1L;
 }

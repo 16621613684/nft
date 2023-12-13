@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,12 +32,15 @@ class NftApplicationTests {
 
     @Autowired
     AuctionMapper auctionMapper;
+    @Autowired
+    AuctionRecordMapper auctionRecordMapper;
     @Test
     void contextLoads() {
     }
 
     @Test
-    void user(){
+    void user(){ AuctionRecord record = new AuctionRecord(0, 1, 1, LocalDateTime.now(), 2.0);
+        auctionRecordMapper.insert(record);
     }
 
     @Test
