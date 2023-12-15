@@ -45,5 +45,8 @@ class NftApplicationTests {
 
     @Test
     public void s(){
-        goodsMapper.setGoodsStatus();
+        String type="一口价";
+        System.out.println(type);
+        type="拍卖";
+        System.out.println(type);
     }}

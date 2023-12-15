@@ -2,7 +2,9 @@ package com.example.nft.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.nft.mapper.AuctionMapper;
 import com.example.nft.mapper.GoodsMapper;
+import com.example.nft.pojo.Auction;
 import com.example.nft.pojo.Goods;
 import com.example.nft.service.GoodsService;
 import com.example.nft.service.OrderService;
@@ -14,7 +16,7 @@ import java.util.List;
 import java.util.Set;
 
 @Service
-public class GoodsServiceImpl  implements GoodsService {
+public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods>  implements GoodsService {
     @Autowired
     OrderService orderService;
     @Autowired

@@ -19,6 +19,7 @@
         from balance_history
         where
             buyerId = #{userId} or sellerId=#{userId}
+        order by time desc
     </select>
 
 

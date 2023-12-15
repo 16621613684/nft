@@ -17,4 +17,5 @@ public class BalanceVO {
     private String orderNo ;
     private Double change ;
     private String time ;
+    private String type;
 }
