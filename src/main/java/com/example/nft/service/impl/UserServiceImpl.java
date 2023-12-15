@@ -1,14 +1,17 @@
 package com.example.nft.service.impl;
 
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.nft.mapper.AuctionMapper;
 import com.example.nft.mapper.UserMapper;
+import com.example.nft.pojo.Auction;
 import com.example.nft.pojo.User;
 import com.example.nft.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends ServiceImpl<UserMapper, User>  implements UserService {
     @Autowired
     UserMapper userMapper;
 

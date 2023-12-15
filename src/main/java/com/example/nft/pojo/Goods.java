@@ -24,7 +24,7 @@ public class Goods {
     private String author ;
     private String type ;
     private Integer owner;
-    @TableLogic
+
     @TableField("goodsStatus")
     private Integer goodsStatus = 0 ;
 

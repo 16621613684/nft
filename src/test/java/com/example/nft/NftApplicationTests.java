@@ -4,6 +4,7 @@ import com.example.nft.mapper.*;
 import com.example.nft.pojo.*;
 import com.example.nft.service.CartService;
 import com.example.nft.service.GoodsService;
+import com.example.nft.service.UserService;
 import com.example.nft.utils.Pinyin;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,8 @@ class NftApplicationTests {
     AuctionMapper auctionMapper;
     @Autowired
     AuctionRecordMapper auctionRecordMapper;
+    @Autowired
+    UserService userService;
     @Test
     void contextLoads() {
     }
@@ -45,8 +48,8 @@ class NftApplicationTests {
 
     @Test
     public void s(){
-        String type="一口价";
-        System.out.println(type);
-        type="拍卖";
-        System.out.println(type);
+        System.out.println(123);
+        System.out.println(goodsService.getAllGoods().stream().filter(g -> g.getGoodsStatus() == 0).count());
+        System.out.println("123"+goodsService.count());
+        System.out.println("456"+userService.count());
     }}
