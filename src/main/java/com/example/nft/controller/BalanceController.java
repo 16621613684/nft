@@ -54,6 +54,7 @@ public class BalanceController {
 
             balanceVO.add(new BalanceVO(bh.getBuyerId(), bh.getSellerId(), buyerName, sellerName, bh.getGoodsId(), goodsName, goodsImg, bh.getOrderId(), orderNo, bh.getChange(), bh.getTime(), type));
         }
+        //作为买家和卖家的交易记录
         List<BalanceVO> buyHistory = balanceVO.stream().filter(b -> b.getBuyerId() == currUser.getId()).collect(Collectors.toList());
         List<BalanceVO> sellHistory = balanceVO.stream().filter(b -> b.getSellerId() == currUser.getId()).collect(Collectors.toList());
 

@@ -54,7 +54,7 @@ public class ScheduleTask {
             //余额变更
 
             userMapper.addBalanceById(byId.getPrice(), byId.getOwner());
-            userMapper.minusBalanceById(byId.getPrice(), auction.getHighestBidderId());
+            userMapper.minusBalanceById(byId.getPrice() , auction.getHighestBidderId());
 
             //交易记录
             Date now = new Date();

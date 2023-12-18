@@ -42,8 +42,9 @@ public class AuctionController {
     private String auctionList(Model model){
         LambdaQueryWrapper<Auction> lw = new LambdaQueryWrapper<Auction>().eq(Auction::getStatus, 0);
         LambdaQueryWrapper<Auction> lw2 = new LambdaQueryWrapper<Auction>().eq(Auction::getStatus, 1);
-
+        //拍卖中的
         List<Auction> availableList = auctionService.list(lw);
+        //已结束的
         List<Auction> soldList = auctionService.list(lw2);
 
         model.addAttribute("availableList",availableList);
