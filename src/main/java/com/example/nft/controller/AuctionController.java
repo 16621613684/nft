@@ -7,6 +7,7 @@ import com.example.nft.pojo.Auction;
 import com.example.nft.pojo.AuctionRecord;
 import com.example.nft.pojo.User;
 import com.example.nft.service.AuctionService;
+import com.example.nft.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +26,8 @@ public class AuctionController {
     AuctionService auctionService;
     @Autowired
     AuctionRecordMapper auctionRecordMapper;
+    @Autowired
+    GoodsService goodsService;
 
     //发起拍卖
     @PostMapping("/addAuction")
@@ -44,8 +47,10 @@ public class AuctionController {
         LambdaQueryWrapper<Auction> lw2 = new LambdaQueryWrapper<Auction>().eq(Auction::getStatus, 1);
         //拍卖中的
         List<Auction> availableList = auctionService.list(lw);
+        availableList.stream().forEach(t->t.setGoodInfo(goodsService.getById(t.getGoodId())));
         //已结束的
         List<Auction> soldList = auctionService.list(lw2);
+        soldList.stream().forEach(t->t.setGoodInfo(goodsService.getById(t.getGoodId())));
 
         model.addAttribute("availableList",availableList);
         model.addAttribute("soldList",soldList);
