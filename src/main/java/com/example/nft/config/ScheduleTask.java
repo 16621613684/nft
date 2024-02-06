@@ -32,7 +32,7 @@ public class ScheduleTask {
     BalanceMapper balanceMapper;
 
     //3.添加定时任务
-    @Scheduled(cron = "0/10 * * * * ?")
+    //@Scheduled(cron = "0/10 * * * * ?")
     //时间间隔：10秒
     //@Scheduled(fixedRate=5000)
     private void configureTasks() {

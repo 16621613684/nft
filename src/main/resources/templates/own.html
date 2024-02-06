@@ -125,6 +125,7 @@
     $(function (){
         $("#table").on("click", ":button", function(event) {
             $("#number").val( $(this).closest("tr").find("td").eq(0).text());
+            $("#goodId").val( $(this).closest("tr").find("td").eq(0).text());
         });
     })
 </script>

@@ -1,0 +1,18 @@
+CREATE TABLE auction (
+                         id INT AUTO_INCREMENT PRIMARY KEY,
+                         goodId INT,
+                         endTime DATETIME,
+                         startingPrice DOUBLE,
+                         currentPrice DOUBLE,
+                         highestBidderId INT,
+                         status INT
+);
+
+
+CREATE TABLE auction_record (
+                               id INT AUTO_INCREMENT PRIMARY KEY,
+                               userId INT,
+                               auctionId INT,
+                               biddingTime DATETIME,
+                               price DOUBLE
+);
