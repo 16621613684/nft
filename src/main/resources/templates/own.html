@@ -28,7 +28,17 @@
             top: 200px;
             left: 500px; /* 定位*/
         }
-        #window input{
+        #auction{ /* 弹框的页面*/
+            width: 500px; /*宽度*/
+            height: auto; /*高度*/
+            background: #fff; /*背景色*/
+            display: none; /*隐藏*/
+            z-index: 1020; /*覆盖*/
+            position: absolute;
+            top: 200px;
+            left: 500px; /* 定位*/
+        }
+        input{
             margin-bottom: 10px;
         }
     </style>
@@ -58,7 +68,10 @@
         <td th:text="*{good.goodsName}" >1</td>
         <td th:text="*{good.author}">1</td>
         <td th:text="*{good.price}">1</td>
-        <td><button type="submit" style="border: none;background: none"><a href="#" onclick="sale()"><img src="/images/sale.png" style="width: 40px;height: 40px"></a></button></td>
+        <td>
+            <button type="submit" style="border: none;background: none"><a href="#" onclick="sale()"><img src="/images/sale.png" style="width: 40px;height: 40px"></a></button>
+            <button type="submit" style="border: none;background: none"><a href="#" onclick="auction()"><img src="/images/auction.png" style="width: 40px;height: 40px"></a></button>
+        </td>
     </tr>
     </tbody>
 </table>
@@ -77,6 +90,24 @@
         </label>
     </form>
 </div>
+<div id="auction">
+    <form th:action="@{/addAuction}" method="post">
+        <h1>拍卖</h1>
+        <label>
+            <input id="goodId" type="hidden" name="goodId">
+        </label>
+        <label>
+            结束时间：<input id="endTime" type="datetime-local" name="endTime" value>
+        </label>
+        <label>
+            起拍价格：<input id="startingPrice" type="number" name="startingPrice" placeholder="请输入价格">
+        </label>
+        <label>
+            <span>&nbsp;</span>
+            <button id="send_a" type="submit">提交</button>
+        </label>
+    </form>
+</div>
 <div id="all_window">
 </div>
 </body>
@@ -84,6 +115,12 @@
     function sale(){
         document.getElementById('all_window').style.display = "block";
         document.getElementById('window').style.display = "block";
+    }
+    function auction(){
+        document.getElementById('all_window').style.display = "block";
+        document.getElementById('auction').style.display = "block";
+        // const time=Date.now()
+        // console.log(time);
     }
     $(function (){
         $("#table").on("click", ":button", function(event) {
