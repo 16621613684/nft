@@ -8,6 +8,7 @@ import com.example.nft.pojo.AuctionRecord;
 import com.example.nft.pojo.User;
 import com.example.nft.service.AuctionService;
 import com.example.nft.service.GoodsService;
+import com.example.nft.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
@@ -29,6 +30,8 @@ public class AuctionController {
     AuctionRecordMapper auctionRecordMapper;
     @Autowired
     GoodsService goodsService;
+    @Autowired
+    UserService userService;
 
     //发起拍卖
     @PostMapping("/addAuction")
@@ -65,13 +68,14 @@ public class AuctionController {
     private String bid(Integer auctionId, Double price, HttpSession session){
         User currUser = (User)session.getAttribute("currUser");
         //添加出价记录
-        AuctionRecord record = new AuctionRecord(0, currUser.getId(), auctionId, LocalDateTime.now(), price);
+        AuctionRecord record = new AuctionRecord(0, currUser.getId(), currUser.getUsername(), auctionId, LocalDateTime.now(), price);
         auctionRecordMapper.insert(record);
         //修改拍卖信息
         Auction auction = auctionMapper.selectById(auctionId);
         if (price>auction.getCurrentPrice()){
             auction.setCurrentPrice(price);
             auction.setHighestBidderId(currUser.getId());
+            auction.setHighestBidderName(currUser.getUsername());
             auctionMapper.updateById(auction);
         }
 
