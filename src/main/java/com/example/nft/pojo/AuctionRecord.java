@@ -24,6 +24,8 @@ public class AuctionRecord implements Serializable {
 
     private Integer userId;
 
+    private String userName;
+
     private Integer auctionId;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") //接收时间类型

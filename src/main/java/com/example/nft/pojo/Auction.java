@@ -33,6 +33,8 @@ public class Auction implements Serializable {
 
     private Integer highestBidderId;
 
+    private String highestBidderName;
+
     public Auction(Integer goodId, LocalDateTime endTime, Double startingPrice) {
         this.goodId = goodId;
         this.endTime = endTime;
@@ -43,13 +45,14 @@ public class Auction implements Serializable {
     @TableField(exist = false)
     private Goods goodInfo;
 
-    public Auction(Integer id, Integer goodId, LocalDateTime endTime, Double startingPrice, Double currentPrice, Integer highestBidderId, Integer status) {
+    public Auction(Integer id, Integer goodId, LocalDateTime endTime, Double startingPrice, Double currentPrice, Integer highestBidderId,String highestBidderName, Integer status) {
         this.id = id;
         this.goodId = goodId;
         this.endTime = endTime;
         this.startingPrice = startingPrice;
         this.currentPrice = currentPrice;
         this.highestBidderId = highestBidderId;
+        this.highestBidderName=highestBidderName;
         this.status = status;
     }
 
