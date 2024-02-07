@@ -41,10 +41,7 @@ class NftApplicationTests {
     void contextLoads() {
     }
 
-    @Test
-    void user(){ AuctionRecord record = new AuctionRecord(0, 1, 1, LocalDateTime.now(), 2.0);
-        auctionRecordMapper.insert(record);
-    }
+
 
     @Test
     public void s(){

@@ -29,25 +29,9 @@
 					sale.style.cursor = "pointer";
 				}
 
-				/* function bind(obj, eventStr, callback) {
-					if (obj.addEventListener) {
-						//大部分浏览器兼容
-						obj.addEventListener(eventStr, callback, false);
-					} else {
-						//IE8及以下
-						obj.attachEvent("on" + eventStr, callback);
-					}
-				} */
-				$(function() {
+				$(function (){
 					$("#buy_box").on("click", ":button", function(event) {
-						//alert($(this).closest("tr").find("td").eq(5).text());
-						//$("#number").val($(this).closest("tr").find("td").eq(5).text());
-					});
-				})
-				$(function() {
-					$("#sale_box").on("click", ":button", function(event) {
-						//alert($(this).closest("tr").find("td").eq(5).text());
-						//$("#number").val($(this).closest("tr").find("td").eq(5).text());
+						$("#number").val( $(this).closest("tr").find("td").eq(0).text());
 					});
 				})
 			}
@@ -104,17 +88,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>sadgfasjkdf</td>
-					<td>12412</td>
-					<td>12412</td>
-					<td>12412</td>
-					<td>12412</td>
-					<td>1</td>
-					<td>45345</td>
-					<td><a href="#"><img src="images/xiangqing.png" style="width: 25px;height: 25px"></a></td>
-					<td><button type="submit" style="border: none;background: none"><a href="#" onclick="bid()"><img src="/images/bid.png" style="width: 25px;height: 25px"></a></button></td>
-				</tr>
+			<tr th:each="Auction : ${availableList}" >
+				<td th:text="*{Auction.id}" >1</td>
+				<<td> <img th:src="@{|/images/*{Auction.goodInfo.goodsImg}|}" alt=""></td>
+				<td th:text="*{Auction.goodInfo.goodsName}" >1</td>
+				<td th:text="*{Auction.goodInfo.author}" >1</td>
+				<td th:text="*{Auction.startingPrice}" >1</td>
+				<td th:text="*{Auction.currentPrice}" >1</td>
+				<td th:text="*{Auction.highestBidderName}" >1</td>
+				<td ><a th:href="@{/auction/}+*{Auction.id}"><img src="images/xiangqing.png" style="width: 25px;height: 25px"></a></td>
+				<td><button type="submit" style="border: none;background: none"><a href="#" onclick="bid()"><img src="/images/bid.png" style="width: 25px;height: 25px"></a></button></td>
+			</tr>
+
 			</tbody>
 		</table>
 		<table id="sale_box">
@@ -131,23 +116,23 @@
 			</tr>
 			</thead>
 			<tbody>
-			<tr>
-				<td>sadgfasjkdf</td>
-				<td>12412</td>
-				<td>12412</td>
-				<td>12412</td>
-				<td>12412</td>
-				<td>1</td>
-				<td>45345</td>
-				<td><a href="#"><img src="images/xiangqing.png" style="width: 25px;height: 25px"></a></td>
+			<tr th:each="Auction : ${soldList}" >
+				<td th:text="*{Auction.id}" >1</td>
+				<<td> <img th:src="@{|/images/*{Auction.goodInfo.goodsImg}|}" alt=""></td>
+				<td th:text="*{Auction.goodInfo.goodsName}" >1</td>
+				<td th:text="*{Auction.goodInfo.author}" >1</td>
+				<td th:text="*{Auction.startingPrice}" >1</td>
+				<td th:text="*{Auction.currentPrice}" >1</td>
+				<td th:text="*{Auction.highestBidderName}" >1</td>
+				<td ><a th:href="@{/auction/}+*{Auction.id}"><img src="images/xiangqing.png" style="width: 25px;height: 25px"></a></td>
 			</tr>
 			</tbody>
 		</table>
 		<div id="window">
-			<form th:action="@{/resell}" method="post">
+			<form th:action="@{/bid}" method="post">
 				<h1>我的出价</h1>
 				<label>
-					<input id="number" type="hidden" name="id">
+					<input id="number" type="hidden" name="auctionId">
 				</label>
 				<label>
 					<input id="price" type="number" name="price" placeholder="请输入价格">
@@ -166,10 +151,5 @@
 			document.getElementById('all_window').style.display = "block";
 			document.getElementById('window').style.display = "block";
 		}
-		$(function (){
-			$("#table").on("click", ":button", function(event) {
-				$("#number").val( $(this).closest("tr").find("td").eq(0).text());
-			});
-		})
 	</script>
 </html>

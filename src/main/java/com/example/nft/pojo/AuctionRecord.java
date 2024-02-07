@@ -10,6 +10,7 @@ import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
@@ -18,13 +19,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 @TableName(value ="auction_record")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class AuctionRecord implements Serializable {
     @TableId(type = IdType.AUTO)
     private Integer id;
 
     private Integer userId;
-
-    private String userName;
 
     private Integer auctionId;
 
@@ -32,6 +32,8 @@ public class AuctionRecord implements Serializable {
     private LocalDateTime biddingTime;
 
     private Double price;
+
+    private String userName;
 
     private static final long serialVersionUID = 1L;
 }

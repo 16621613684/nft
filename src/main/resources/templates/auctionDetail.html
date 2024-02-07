@@ -21,13 +21,22 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>收到回复</td>
-      <td>20240207</td>
-      <td>32115165</td>
+    <tr th:each="record : ${auctionRecords}" >
+      <td th:text="*{record.userName}" >1</td>
+      <td th:text="*{record.biddingTime}" >hdhdhd</td>
+      <td th:text="*{record.price}" >1</td>
     </tr>
 
     </tbody>
   </table>
+  <script>
+    // 在页面加载时替换所有单元格中的 "T" 为 " "
+    document.addEventListener('DOMContentLoaded', function() {
+      var cells = document.querySelectorAll('td');
+      cells.forEach(function(cell) {
+        cell.textContent = cell.textContent.replace(/T/g, ' ');
+      });
+    });
+  </script>
 </body>
 </html>

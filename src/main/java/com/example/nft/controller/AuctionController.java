@@ -14,6 +14,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
@@ -46,7 +47,7 @@ public class AuctionController {
             return "redirect:/toOwn";
     }
     //查询所有拍卖
-    @GetMapping("/auctionList")
+    @GetMapping("/toAuction")
     private String auctionList(Model model){
         LambdaQueryWrapper<Auction> lw = new LambdaQueryWrapper<Auction>().eq(Auction::getStatus, 0);
         LambdaQueryWrapper<Auction> lw2 = new LambdaQueryWrapper<Auction>().eq(Auction::getStatus, 1);
@@ -68,11 +69,12 @@ public class AuctionController {
     private String bid(Integer auctionId, Double price, HttpSession session){
         User currUser = (User)session.getAttribute("currUser");
         //添加出价记录
-        AuctionRecord record = new AuctionRecord(0, currUser.getId(), currUser.getUsername(), auctionId, LocalDateTime.now(), price);
+        AuctionRecord record = new AuctionRecord(0, currUser.getId(),  auctionId, LocalDateTime.now(), price,currUser.getUsername());
         auctionRecordMapper.insert(record);
         //修改拍卖信息
         Auction auction = auctionMapper.selectById(auctionId);
-        if (price>auction.getCurrentPrice()){
+
+        if (auction.getCurrentPrice()==null||price>auction.getCurrentPrice()){
             auction.setCurrentPrice(price);
             auction.setHighestBidderId(currUser.getId());
             auction.setHighestBidderName(currUser.getUsername());
@@ -80,6 +82,13 @@ public class AuctionController {
         }
 
 
-        return "redirect:/auctionList";
+        return "redirect:/toAuction";
+    }
+    //查看出价记录
+    @GetMapping("/auction/{id}")
+    private String auctionDetail(@PathVariable Integer id, Model model){
+        List<AuctionRecord> auctionRecords = auctionRecordMapper.selectByAuctionId(id);
+        model.addAttribute("auctionRecords",auctionRecords);
+        return "auctionDetail";
     }
 }

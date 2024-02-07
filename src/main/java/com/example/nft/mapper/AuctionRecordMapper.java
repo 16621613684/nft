@@ -3,6 +3,11 @@ package com.example.nft.mapper;
 import com.example.nft.pojo.AuctionRecord;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
 
 /**
 * @author User
@@ -12,7 +17,8 @@ import org.apache.ibatis.annotations.Mapper;
 */
 @Mapper
 public interface AuctionRecordMapper extends BaseMapper<AuctionRecord> {
-
+    @Select("select * from auction_record where auctionId=#{id}")
+    List<AuctionRecord> selectByAuctionId(Integer id);
 }
 
 
