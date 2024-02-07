@@ -4,60 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d7194ca-b7a5-4650-8403-6b8009aaae5c" name="Changes" comment="12/19">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/ed5c07b4-4b50-4e70-a112-8d117b548914.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/ed5c07b4-4b50-4e70-a112-8d117b548914/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/ed5c07b4-4b50-4e70-a112-8d117b548914/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/ed5c07b4-4b50-4e70-a112-8d117b548914/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/ed5c07b4-4b50-4e70-a112-8d117b548914/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/config/ScheduleTask.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/controller/AnalyzeController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/controller/AuctionController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/controller/BalanceController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/controller/WeChatController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/mapper/AuctionMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/mapper/AuctionRecordMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/mapper/BalanceMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/pojo/Auction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/pojo/AuctionRecord.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/pojo/BalanceHistory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/pojo/BalanceVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/pojo/CodeToken.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/pojo/Decript.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/pojo/WeChatPerson.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/service/AuctionService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/service/WxSignatureCheckService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/service/impl/AuctionServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/nft/utils/WxUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/AuctionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/BalanceMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sql/sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/audio/a.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/wallet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/images/code.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/images/e-mail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/images/phone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/images/wechat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/certify.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/wallet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/nft/config/ScheduleTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/nft/config/ScheduleTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/nft/controller/AuctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/nft/controller/AuctionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/nft/pojo/Auction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/nft/pojo/Auction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/own.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/own.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/own.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/own.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/own.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/own.html" afterDir="false" />
+    <list default="true" id="4d7194ca-b7a5-4650-8403-6b8009aaae5c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/bid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/auction.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/auctionDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ed5c07b4-4b50-4e70-a112-8d117b548914.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ed5c07b4-4b50-4e70-a112-8d117b548914.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/wallet.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/wallet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="auction" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -122,14 +82,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../git拍卖系统" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\apache-tomcat-9.0.59-windows-x64\大创\src\main\resources\templates" />
       <recent name="D:\ideaproject\nfts\src\main\resources\static\audio" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\apache-tomcat-9.0.59-windows-x64\大创\src\main\resources\static\images" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.nft.pojo" />
@@ -208,6 +172,9 @@
       <workItem from="1705210825531" duration="3626000" />
       <workItem from="1706772279353" duration="3148000" />
       <workItem from="1707200129642" duration="4795000" />
+      <workItem from="1707206733017" duration="4135000" />
+      <workItem from="1707283829051" duration="439000" />
+      <workItem from="1707292351731" duration="586000" />
     </task>
     <task id="LOCAL-00001" summary="a'a">
       <created>1701418534780</created>
@@ -328,7 +295,21 @@
       <option name="project" value="LOCAL" />
       <updated>1702975243179</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="2.6">
+      <created>1707206810874</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1707206810874</updated>
+    </task>
+    <task id="LOCAL-00019" summary="12/19">
+      <created>1707206823947</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1707206823947</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,6 +380,7 @@
     <MESSAGE value="12/15" />
     <MESSAGE value="12/15 2" />
     <MESSAGE value="12/18" />
+    <MESSAGE value="2.6" />
     <MESSAGE value="12/19" />
     <option name="LAST_COMMIT_MESSAGE" value="12/19" />
   </component>

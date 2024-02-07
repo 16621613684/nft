@@ -50,14 +50,15 @@ body{
     color: #ffdfd4;
     text-decoration: none;
 }
+
 .head-right{
-    width: 250px;
+    width: auto;
     float: right;
-    position: relative;
-    top: 22px;
+    margin-right: 10px;
 }
 .head-right a{
     text-decoration: none;
+    color: black;
 }
 .swiper {
     width: 600px;
@@ -202,15 +203,6 @@ p{
     width: 500px;
     height: 300px;
     border-radius: 10px;
-}
-.head-right{
-    width: 300px;
-    float: right;
-    margin-right: 10px;
-}
-.head-right a{
-    text-decoration: none;
-    color: black;
 }
 
 .btn-list-group {
