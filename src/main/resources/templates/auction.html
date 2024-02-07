@@ -81,6 +81,7 @@
 					<th>藏品名</th>
 					<th>作者</th>
 					<th>起拍价</th>
+					<th>结束时间</th>
 					<th>当前价格</th>
 					<th>出价最高者</th>
 					<th>出价记录</th>
@@ -90,10 +91,11 @@
 			<tbody>
 			<tr th:each="Auction : ${availableList}" >
 				<td th:text="*{Auction.id}" >1</td>
-				<<td> <img th:src="@{|/images/*{Auction.goodInfo.goodsImg}|}" alt=""></td>
+				<td> <img th:src="@{|/images/*{Auction.goodInfo.goodsImg}|}" alt=""></td>
 				<td th:text="*{Auction.goodInfo.goodsName}" >1</td>
 				<td th:text="*{Auction.goodInfo.author}" >1</td>
 				<td th:text="*{Auction.startingPrice}" >1</td>
+				<td th:text="*{Auction.endTime}" >1</td>
 				<td th:text="*{Auction.currentPrice}" >1</td>
 				<td th:text="*{Auction.highestBidderName}" >1</td>
 				<td ><a th:href="@{/auction/}+*{Auction.id}"><img src="images/xiangqing.png" style="width: 25px;height: 25px"></a></td>
@@ -110,6 +112,7 @@
 				<th>藏品名</th>
 				<th>作者</th>
 				<th>起拍价</th>
+				<th>结束时间</th>
 				<th>当前价格</th>
 				<th>出价最高者</th>
 				<th>出价记录</th>
@@ -118,10 +121,11 @@
 			<tbody>
 			<tr th:each="Auction : ${soldList}" >
 				<td th:text="*{Auction.id}" >1</td>
-				<<td> <img th:src="@{|/images/*{Auction.goodInfo.goodsImg}|}" alt=""></td>
+				<td> <img th:src="@{|/images/*{Auction.goodInfo.goodsImg}|}" alt=""></td>
 				<td th:text="*{Auction.goodInfo.goodsName}" >1</td>
 				<td th:text="*{Auction.goodInfo.author}" >1</td>
 				<td th:text="*{Auction.startingPrice}" >1</td>
+				<td th:text="*{Auction.endTime}" >1</td>
 				<td th:text="*{Auction.currentPrice}" >1</td>
 				<td th:text="*{Auction.highestBidderName}" >1</td>
 				<td ><a th:href="@{/auction/}+*{Auction.id}"><img src="images/xiangqing.png" style="width: 25px;height: 25px"></a></td>
@@ -151,5 +155,20 @@
 			document.getElementById('all_window').style.display = "block";
 			document.getElementById('window').style.display = "block";
 		}
+		// 在页面加载时替换 buy_box 表中第六列中的 "T" 为 " "
+		document.addEventListener('DOMContentLoaded', function() {
+			var cells_buy = document.querySelectorAll('table#buy_box td:nth-child(6)');
+			cells_buy.forEach(function(cell) {
+				cell.textContent = cell.textContent.replace(/T/g, ' ');
+			});
+		});
+
+		// 在页面加载时替换 sale_box 表中第六列中的 "T" 为 " "
+		document.addEventListener('DOMContentLoaded', function() {
+			var cells_sale = document.querySelectorAll('table#sale_box td:nth-child(6)');
+			cells_sale.forEach(function(cell) {
+				cell.textContent = cell.textContent.replace(/T/g, ' ');
+			});
+		});
 	</script>
 </html>

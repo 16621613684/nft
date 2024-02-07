@@ -31,7 +31,7 @@ public class ScheduleTask {
     @Autowired
     BalanceMapper balanceMapper;
 
-    //3.添加定时任务
+
     //@Scheduled(cron = "0/10 * * * * ?")
     //时间间隔：10秒
     //@Scheduled(fixedRate=5000)
@@ -47,6 +47,7 @@ public class ScheduleTask {
             //改变状态
             auction.setStatus(1);
             auctionService.updateById(auction);
+            if (auction.getHighestBidderId()!=null){
             //改变商品状态
             Goods byId = goodsService.getById(auction.getGoodId());
             byId.setGoodsStatus(1);
@@ -63,7 +64,7 @@ public class ScheduleTask {
             balanceMapper.insert(new BalanceHistory(0, auction.getHighestBidderId(),byId.getOwner(), byId.getId(), 0,byId.getPrice(),sdf.format(now)));
             //拥有者变更
             byId.setOwner(auction.getHighestBidderId());
-            goodsService.updateById(byId);
+            goodsService.updateById(byId);}
 
 
         }

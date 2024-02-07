@@ -73,8 +73,7 @@ public class AuctionController {
         auctionRecordMapper.insert(record);
         //修改拍卖信息
         Auction auction = auctionMapper.selectById(auctionId);
-
-        if (auction.getCurrentPrice()==null||price>auction.getCurrentPrice()){
+        if (auction.getCurrentPrice()==null||(price>auction.getCurrentPrice()&&price>auction.getStartingPrice())){
             auction.setCurrentPrice(price);
             auction.setHighestBidderId(currUser.getId());
             auction.setHighestBidderName(currUser.getUsername());
