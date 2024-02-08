@@ -4,7 +4,6 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link type="text/css" rel="stylesheet" href="/css/goods.css">
     <script  type="text/javascript" src="/css/index.js" charset="UTF-8"></script>
-
     <title>Goods</title>
 
 </head>
@@ -21,9 +20,12 @@
         </form>
     </div>
     <div class="head-right">
-          <span class="btn-list-group">
+        <span class="btn-list-group">
+        <a th:href="@{/toAuction}" class="auction"><img src="/images/auction.png" style="width: 40px;height: 40px"></a>
+        </span>
+        <span class="btn-list-group">
         <a th:href="@{/toLogin}"  class="login"><img src="/images/login.png" style="width: 40px;height: 40px"></a>
-          </span>
+        </span>
         <span class="btn-list-group">
         <a th:href="@{/toRegister}" class="register"><img src="/images/regist.png" style="width: 40px;height: 40px"></a>
         </span>

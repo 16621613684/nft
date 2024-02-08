@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>AUCTION</title>
 		<link type="text/css" rel="stylesheet" href="/css/wallet.css">
+		<link type="text/css" rel="stylesheet" href="/css/own.css">
 		<script type="text/javascript" src="/css/jquery-3.5.1.min.js"></script>
 		<script type="text/javascript">
 			window.onload = function() {
@@ -99,7 +100,7 @@
 				<td th:text="*{Auction.currentPrice}" >1</td>
 				<td th:text="*{Auction.highestBidderName}" >1</td>
 				<td ><a th:href="@{/auction/}+*{Auction.id}"><img src="images/xiangqing.png" style="width: 25px;height: 25px"></a></td>
-				<td><button type="submit" style="border: none;background: none"><a href="#" onclick="bid()"><img src="/images/bid.png" style="width: 25px;height: 25px"></a></button></td>
+				<td><button type="submit" style="border: none;background: none"><a href="#" onclick="bid()"><img src="/images/bid.png" style="width: 37px;height: 45px"></a></button></td>
 			</tr>
 
 			</tbody>
