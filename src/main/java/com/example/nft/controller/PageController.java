@@ -16,7 +16,10 @@ public class PageController {
     public String back(){
         return "redirect:http://localhost:8888/#/dashboard";
     }
-
+    @GetMapping("/info")
+    public String info(){
+        return "info";
+    }
 
     @ResponseBody
     @RequestMapping("/wxSignatureCheck")
@@ -36,7 +39,7 @@ public class PageController {
 
     @GetMapping("/test")
     public String test(){
-        return "test";
+        return "info";
     }
 
 }

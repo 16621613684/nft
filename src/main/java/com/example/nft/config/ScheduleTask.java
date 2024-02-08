@@ -32,9 +32,9 @@ public class ScheduleTask {
     BalanceMapper balanceMapper;
 
 
-    //@Scheduled(cron = "0/10 * * * * ?")
+    @Scheduled(cron = "0/10 * * * * ?")
     //时间间隔：10秒
-    //@Scheduled(fixedRate=5000)
+    @Scheduled(fixedRate=5000)
     private void configureTasks() {
         LambdaQueryWrapper<Auction> wrapper = new LambdaQueryWrapper<Auction>().eq(Auction::getStatus, 0);
         //拿到所有处于拍卖中且到期的

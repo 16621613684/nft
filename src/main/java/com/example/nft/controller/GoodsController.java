@@ -4,6 +4,7 @@ import com.example.nft.pojo.Goods;
 import com.example.nft.pojo.User;
 import com.example.nft.service.GoodsService;
 import com.example.nft.service.OrderService;
+import com.example.nft.service.UserService;
 import com.example.nft.utils.Pinyin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +27,8 @@ public class GoodsController {
     GoodsService goodsService;
     @Autowired
     OrderService orderService;
+    @Autowired
+    UserService userService;
     //首页
     @RequestMapping("/home")
     public String index(HttpSession session,Model model){
@@ -84,6 +87,10 @@ public class GoodsController {
         model.addAttribute("headT",goodsService.getTotal("像素头像"));
         model.addAttribute("operaT",goodsService.getTotal("脸谱"));
         model.addAttribute("cartoonT",goodsService.getTotal("漫画"));
+
+        model.addAttribute("goodsCount",goodsService.count());
+        model.addAttribute("avGoodsCount",goodsService.getAllGoods().stream().filter(g -> g.getGoodsStatus() == 0).count());
+        model.addAttribute("userCount",userService.count());
 
         return "home";
     }

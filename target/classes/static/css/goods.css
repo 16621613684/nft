@@ -92,7 +92,7 @@
     text-decoration: none;
 }
 .head-right{
-    width: 300px;
+    width: auto;
     float: right;
     position: relative;
     top: 22px;

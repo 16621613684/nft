@@ -133,11 +133,11 @@
     <div class="introduce1">
         <label>市场分析</label>
         <ul>
-            <li>NFT总数</li>
-            <li>用户总数</li>
-            <li>NFT平均价值</li>
+            <li th:if="${goodsCount}!=null" th:text="NFT总数+':'+${goodsCount}">NFT总数</li>
+            <li th:if="${avGoodsCount}!=null" th:text="NFT平均价值+':'+${avGoodsCount}">NFT平均价值</li>
+            <li th:if="${userCount}!=null" th:text="用户总数+':'+${userCount}">用户总数</li>
         </ul>
     </div>
-    <div class="introduce2"><img src="images/introduce2.png"></div>
+    <div class="introduce2"><a th:href="@{/info}"><img src="images/introduce2.png"></a></div>
 </body>
 </html>
