@@ -44,7 +44,7 @@
         <a th:href="@{/exit}" class="admin"><img src="/images/exit.png" style="width: 40px;height: 40px"></a>
         </span>
         <br>
-        <span ><p style="margin-left: 55% ;width: 100px;display: inline-block" th:if="${session.currUser}!=null" th:text="欢迎你+${session.currUser.getUsername()}">张dada</p></span>
+        <span ><p class="flicker" style="" th:if="${session.currUser}!=null" th:text="欢迎你+${session.currUser.getUsername()}">张dada</p></span>
     </div>
     <div class="container">
         <div class="topic">
@@ -130,7 +130,14 @@
         </div>
     </div>
     <hr>
-    <div class="introduce1"><img src="images/introduce.png"></div>
+    <div class="introduce1">
+        <label>市场分析</label>
+        <ul>
+            <li>NFT总数</li>
+            <li>用户总数</li>
+            <li>NFT平均价值</li>
+        </ul>
+    </div>
     <div class="introduce2"><img src="images/introduce2.png"></div>
 </body>
 </html>

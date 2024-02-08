@@ -1,25 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auction Form</title>
-</head>
-<body>
-
-<h1>Auction Form</h1>
-<p th:if="${a}!=null"  th:text="${a.endTime}">zbc</p>
-<form th:action="@{/addAuction}" method="post">
-    <label  for="startingPrice">起拍价：</label>
-    <input type="number" id="startingPrice" name="startingPrice" required>
-    <br>
-
-    <label for="auctionEndDateTime">拍卖结束时间：</label>
-    <input type="datetime-local" id="auctionEndDateTime" name="endTime" required>
-    <br>
-
-    <button  type="submit">注册</button>
-</form>
-
-</body>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background-image:url("../static/images/background.jpg");
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			div {
+				width: 60%;
+				position: relative;
+				left: 20%;
+			}
+			.head-left{
+				width: 150px;
+				height: 80px;
+				position: relative;
+				left: 30px;
+				display: inline-block;
+			}
+			.head-left img{
+				width: 150px;
+				height: 80px;
+			}
+		</style>
+	</head>
+	<body>
+	<div class="head-left">
+		<a th:href="@{/backHome}"><img  src="/images/logo.png"></a>
+	</div>
+		<div id="one">
+			<h2>NFT 有何用途？</h2>
+			<p>NFT 可以代表任何事物，但让我们探讨一下 NFT 目前的使用方式以及未来的潜在实施方式。</p>
+		</div>
+		<div id="two">
+			<h2>艺术 NFT</h2>
+			<p>艺术NFT是 NFT 的一种，代表数字艺术作品，例如绘画、绘画或数字艺术品。每件艺术 NFT 都是独一无二的，并且可以追溯到 NFT 的原创者，而与创作者的联系也可能很有价值。艺术 NFT
+				是一种新形式的数字艺术，可以收集和出售，类似于实体艺术品。艺术 NFT 还可以具有额外的效用（例如，拥有 NFT 还可能赋予您使用底层艺术品的商业权利）。
+			</p>
+			<p>
+				艺术家们正在用 NFT 创作令人难以置信的新颖作品。达明安·赫斯特 (Damien Hirst) 在他的收藏《货币》中使用了 NFT ，他在其中创建了 10,000
+				张独特的实体画作的数字版本。收藏家有一年的时间来决定是否想要这幅画的数字版本或实体版本——无论他们不选择哪个版本，都将被销毁。
+			</p>
+		</div>
+		<div id="three">
+			<h2>虚拟宇宙</h2>
+			<p>
+				元宇宙是指用户可以与数字空间进行交互的虚拟和增强现实，但“元宇宙”的定义仍在不断发展。与其说它是一个地方，不如说它是一种联系和互动的方式；它可以是无数世界或竞技场的家园，每个世界或竞技场都有自己的土地、角色和可能性。
+			</p>
+			<p>
+				在未来理论上的开放元宇宙中，游戏 NFT 可用于表示各种虚拟物品，包括虚拟房地产、服装、配饰以及头像或游戏角色的其他定制选项。这些 NFT 可能会在 OpenSea
+				等市场上出售，从而允许用户购买和出售可在元宇宙中使用的虚拟物品。
+			</p>
+			<p>
+				区块链的好处之一是它们是去中心化系统，这意味着它们不受单个实体控制。这有助于促进 NFT 分配和所有权的公平性和透明度。去中心化通过无需信任和无需许可的交易提供了一层保护和透明度。
+			</p>
+			<p>
+				互操作性是指不同系统或组件协同工作和相互通信的能力。区块链使 NFT 能够在各种虚拟世界或支持 NFT 的平台之间转移，从而实现更大的可访问性、灵活性和实用性。
+			</p>
+			<p>
+				虽然真正的互操作性仍然有点遥不可及，但理想情况下，未来 NFT
+				将能够在元宇宙中的不同平台和虚拟世界中使用，允许用户在各种体验之间导航时携带他们的数字物品。这种互操作性可以带来新的协作方式，并更好地集成来自开发人员和平台的内容。
+			</p>
+			<p>
+				NFT 还使用户能够通过在元宇宙中展示他们独特的物品（例如化身、皮肤、服装或艺术品）来创造性地表达自己。这使用户可以创建独特的数字身份，从而增强虚拟空间中的社交互动和用户参与度。
+			</p>
+		</div>
+	</body>
 </html>

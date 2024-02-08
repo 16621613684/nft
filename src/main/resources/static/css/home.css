@@ -56,6 +56,26 @@ body{
     float: right;
     margin-right: 10px;
 }
+.flicker{
+    margin-left: 55%;
+    width: 100px;
+    display: inline-block;
+    color:black; /*设置文字颜色*/
+    font-weight:bolder; /*设置字体粗细*/
+    -webkit-animation: flicker 2s infinite;    /*设置动画*/
+}
+@-webkit-keyframes flicker{                    /*创建动画*/
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
 .head-right a{
     text-decoration: none;
     color: black;
@@ -182,13 +202,20 @@ p{
     display: inline-block;
     border-radius: 10px;
     position: relative;
-    top: 10px;
+    top: -108px;
     left: 140px;
+    background-color: black;
+    opacity: .5;
+    font-family: 华文仿宋;
+    font-size: 40px;
+    color: white;
 }
-.introduce1 img{
-    width: 500px;
-    height: 300px;
-    border-radius: 10px;
+.introduce1 label{
+    position: relative;
+    left: 35%;
+}
+.introduce1 li{
+    font-size: 25px;
 }
 .introduce2{
     width: 500px;
