@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d7194ca-b7a5-4650-8403-6b8009aaae5c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/bid.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/auction.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/auctionDetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ed5c07b4-4b50-4e70-a112-8d117b548914.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ed5c07b4-4b50-4e70-a112-8d117b548914.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/wallet.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/wallet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/wallet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/wallet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/auction.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/auction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/wallet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/wallet.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +165,7 @@
       <workItem from="1707200129642" duration="4795000" />
       <workItem from="1707206733017" duration="4135000" />
       <workItem from="1707283829051" duration="439000" />
-      <workItem from="1707292351731" duration="586000" />
+      <workItem from="1707292351731" duration="4932000" />
     </task>
     <task id="LOCAL-00001" summary="a'a">
       <created>1701418534780</created>
@@ -309,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707206823947</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="0207">
+      <created>1707293143593</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1707293143593</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,6 +380,7 @@
     <MESSAGE value="12/18" />
     <MESSAGE value="2.6" />
     <MESSAGE value="12/19" />
-    <option name="LAST_COMMIT_MESSAGE" value="12/19" />
+    <MESSAGE value="0207" />
+    <option name="LAST_COMMIT_MESSAGE" value="0207" />
   </component>
 </project>
