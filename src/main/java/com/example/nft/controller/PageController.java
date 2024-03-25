@@ -22,7 +22,7 @@ public class PageController {
     }
 
     @ResponseBody
-    @RequestMapping("/wxSignatureCheck")
+    @GetMapping("/wxSignatureCheck")
     public String wxSignatureCheck(
             @RequestParam(value = "signature") String signature,
             @RequestParam(value = "timestamp") String timestamp,
